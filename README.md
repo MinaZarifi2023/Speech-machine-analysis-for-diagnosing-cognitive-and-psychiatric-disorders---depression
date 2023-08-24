@@ -2,7 +2,7 @@
 A thesis submitted to the Graduate Studies Office In partial fulfillment of the requirements for The degree of Master's degree in Computer Engineering. University of Tehran  College of Engineering  Faculty of  Electrical and Computer Engineering
 
 By:Mina Zarifi - Supervisors:Dr. A Vahabie ,Dr. BN Araabi - June, 2023 -
-mina.zarifi@ut.ac.ir
+mina.zarifi@ut.ac.ir 
 
 
 
