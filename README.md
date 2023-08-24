@@ -1,7 +1,8 @@
 # Speech-machine-analysis-for-diagnosing-cognitive-and-psychiatric-disorders---depression
 A thesis submitted to the Graduate Studies Office In partial fulfillment of the requirements for The degree of Master's degree in Computer Engineering. University of Tehran  College of Engineering  Faculty of  Electrical and Computer Engineering
 
-By:Mina Zarifi - Supervisors:Dr. A Vahabie ,Dr. BN Araabi - June, 2023
+By:Mina Zarifi - Supervisors:Dr. A Vahabie ,Dr. BN Araabi - June, 2023 -
+m.zarifi1996g@gmail.com
 
 
 
@@ -9,7 +10,7 @@ By:Mina Zarifi - Supervisors:Dr. A Vahabie ,Dr. BN Araabi - June, 2023
 
 فایل کد پایتون در Zarifi_project.ipynb و توضیحات نیز در یک فایل docx ذخیره شده است. بقیه فایلها csv هستند که دادگان به دست آمده از هر قسمت هستند. برای اجرای هر قطعه کد میتوانید بخش مورد نظر را دانلود و استفاده کنید. 
 
-چکیده
+چکیده:
 در این پژوهش دادگان به صورت آنلاین از افراد بزرگسال مختلفی جمع آوری شده­اند، که شامل دو وظیفه گفتاری مختلف که اولی سه سوال در مورد گذشته، حال و آینده آزمودنی و دومی توصیف هشت تصویر توسط آزمودنی است. همچنین چهار پرسش‌نامه به نام‌های پرسش‌نامه افسردگی بک، پرسش‌نامه اضطراب بک، پرسش‌نامه اضطراب حالت صفت بک و پرسش‌نامه پاناس نیز از آزمودنی‌ها جمع‌آوری شده است. هدف تحقیق روی بیماری افسردگی است. برای ارزیابی علائم افسردگی، از وظیفه گفتاری توصیف هشت تصویر توسط 119 آزمودنی تصادفی بالای هجده سال سن، از میزان امتیازات افراد در پرسش‌نامه افسردگی بک استفاده شد. این پژوهش با هدف تحلیل رابطه بین نمرات پرسش‌نامه افسردگی بک و ویژگی‌های مربوط به متن پیش برده شده است. با استفاده از تحلیل ماتریس شباهت بردارهای معنایی، نشان داده شد که بعضی از این ویژگی‌ها تأثیری در علائم افسردگی دارد. برای مثال بزرگسالان با علائم افسردگی بیشتر مقدار انحراف معیار فاصله اقلیدسی و کسینوسی بیشتر بین بردارهای معنایی در بین جملات هستند. علاوه بر این، در حالی که مشخص شد برخی ویژگی‌ها در توضیح علائم افسردگی و اضطراب موثرند، برای تعیین اهمیت آن‌ها در پیش‌بینی این وضعیت‌های روانی، از مدل‌ه یادگیری ماشین رگرسیون خطی استفاده شده است. ویژگی‌های بررسی شده گراف گفتار، احساسات متن، میزان پرش فکری، بردارهای معنایی می‌باشند. از بردارهای معنایی برای تحلیل ارتباط بین ویژگی‌ها و امتیازات پرسش‌نامه افسردگی نیز استفاده شده است. بردار‌های معنایی به سه روش بردارهای معنایی به دست آمده به روش توکن‌محور، جمله‌محور و میانگین تعبیه جملات محور به دست آمده‌اند و با هم مقایسه شده‌اند. تمامی‌مراحل(پیدا کردن میزان همبستگی بین ویژگی‌ها با امتیازات پرسش‌نامه افسردگی بک، مشاهده ماتریس شباهت به تفکیک هر تصویر، ‌پیش‌بینی امتیازات پرسش‌نامه افسردگی بک با استفاده از مدل رگرسیون خطی) روی هر سه مورد انجام شده است. از آن‌ها نیز برای تحلیل ماتریس شباهت استفاده شده است تا اگر ویژگی ای روند خاصی طبق امتیازات پرسش‌نامه افسردگی بک با ماتریس شباهت بین بردارهای معنایی داشته باشد از آن ویژگی به عنوان ورودی طبقه بند برای ‌پیش‌بینی امتیازات پرسش‌نامه افسردگی بک استفاده شود. 
 
 
@@ -220,7 +221,12 @@ visualized similarity matrix
 
 
 
-Abstract
+
+
+
+
+
+Abstract:
     In this study, online data was collected from various adult subjects, which dataset included two different speech tasks. The first task involved answering three questions about the past, present, and future, while the second task involved describing eight images by the subjects. Additionally, four inventory named the Beck Depression Inventory, Beck Anxiety Inventory, Beck State-Trait Anxiety Inventory, and P.A.N.A.S. were also collected from the subjects.
 The aim of the research was to study depression as a disease. To evaluate the symptoms of depression, the speech task of describing eight pictures was used by 119 random subjects over eighteen years of age, and the scores of individuals in the Beck Depression Inventory. This research has been carried out with the aim of analyzing the relationship between the scores of the Beck Depression Inventory and the characteristics of the text. Using semantic vector similarity analysis, it was shown that some of these features have an effect on depression symptoms. For example adults with more depression symptoms had a greater standard deviation of Euclidean and cosine distances between semantic vectors in sentences. In addition, while it was found that some features are effective in describing depression symptoms, a linear regression machine learning model was used to determine their importance in predicting these psychological states. The examined features include speech graph, text sentiments, jump of ideas, and semantic embedding vectors. Embedding vectors were also used to analyze the relationship between features and Beck Depression Inventory scores. The embedding vectors were obtained using three methods: token-based, sentence-based, and sentence-averaging embedding. All stages (finding the correlation between features and Beck Depression Inventory scores, observing similarity matrix for each image, predicting Beck Depression Inventory scores using a linear regression model) were performed for all three cases. They were also used to analyze the similarity matrix so that if a feature has a specific trend according to the Beck Depression Inventory  scores and the similarity matrix between semantic embedding vectors, that feature can be used as input for regressing and predicting the Beck Depression Inventory scores. 
 
