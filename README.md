@@ -1,6 +1,11 @@
 # Speech-machine-analysis-for-diagnosing-cognitive-and-psychiatric-disorders---depression
 A thesis submitted to the Graduate Studies Office In partial fulfillment of the requirements for The degree of Master's degree in Computer Engineering. University of Tehran  College of Engineering  Faculty of  Electrical and Computer Engineering
 
+By:Mina Zarifi
+Supervisors:Dr. A Vahabie ,Dr. BN Araabi
+June, 2023
+
+
 
 لازم به ذکر است تقریبا در انتهای هر بخش دیتای به دست آمده ذخیره شده و در بخش بعد استفاده میشود. به همین دلیل شما نیازی به به ترتیب اجرا کردن ستون ها ندارید بلکه میتوانید با در اختیار داشتن دادگان مناسب از هر بخشی که نیاز دارید استفاده کنید. 
 
