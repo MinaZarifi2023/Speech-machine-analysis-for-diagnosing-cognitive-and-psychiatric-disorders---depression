@@ -62,158 +62,137 @@ It should be noted that this part was used to test different methods, but it was
 4. vectorized - analysis
 
    
-در بخش vectorised with parsbert دادگان اصلی که شامل صحبت های افراد به تفکیک هر تصویر است با پارس برت تبدیل به بردار شده اند. 
-! لازم به ذکر است که ادامه این بخش فقط برای تحلیل و آنالیز بیشتر و آشنا شدن با دادگان است و شما اصلا نیازی به اجرای آن ندارید. زیرا در یخش های بعد تحلیل هایی که نیاز هستند را انجام خواهید داد.
-در بخش Similarit Marix از آن بردار ها استفاده شده برای رسم ماتریس شباهت. با توجه به اینکه ابعاد دادگان وکتورایز شده(768, 952) است ابعاد ماتریس شباهت  (952, 952) می باشد.similarity matrix برای وکتورها رسم شد. سپس بر اساس امتیاز BDI ، طول زمانی که افراد صحبت کرده اند، بر اساس ترتیب عکس ها، و بر اساس امتیازات BDI کتگوری شده، sort شد. 
-یک سری آنالیز داده در این بخش انجام شده که در صورت دلخواه م یتوانید از آنها استفاده کنید. 
+ In the "vectorized with ParsBERT" section, the original data, which includes individuals' speech for each image separately, is vectorized using ParsBERT. Note that the continuation of this section is only for further analysis and familiarity with the data, and you do not need to execute it because the required analyses will be conducted in the following sections.
+In the "Similarity Matrix" section, the vector representations are used to create a similarity matrix. Since the dimensions of the vectorized data are (768, 952), the dimensions of the similarity matrix are (952, 952). The similarity matrix is plotted for the vectors. Then, they are sorted based on the BDI scores, the duration of individuals' speech, the order of the images, and the categorized BDI scores.
+Several data analyses are performed in this section, which you can use if desired.
 
-6. similarity matrix
+5. similarity matrix
 
    
-با در دست داشتن دادگان وکتورایز شده که ویژگی های زبانی آن نیز در دیتاست وجود دارد میتوان ماتریس شباهت را به ترتیب ویژگی های مورد نیاز حتی به تفکیک تصاویر تحلیلی و بررسی کرد. این کار در ادامه انجام خواهد شد. 
-میزان پرش فکری که آزمودنی­ها داشته‌اند نیز با استفاده از فاصله اقلیدسی و با استفاده از کسینوس زاویه بین بردار‌های معنایی تعبیه شده هر جمله در متون محاسبه شده و میانگین، انحراف معیار و مجموع فاصله‌ها به عنوان ویژگی استفاده شده‌اند. با داشتن n جمله در یک متن، n-1 معیار در آن متن خواهیم داشت. این به آن معنا است که برای متونی که فقط یک جمله دارند نمی‌توان این ویژگی را محاسبه کرد و مقدار nall به آن تعلق میگیرد.
-در بخش sort by euclidean_mean feature and then show the similarity matrix همانطور که از اسمش پیداست ابتدا بر اساس میانگین اقلیدسی دادگان مرتب شده اند بعد میزان cosine_similarity بین بردارهای محاسبه شده است سپس ماتریس شباهت به دست آمده و رسم شده است.(دلیل کم شدن دیتا به 686در 686 این است که در دادگانی که تنها حاوی یک جمله بودند نمیتوان ویژگی های فاصله پرش فکری را محاسبه کرد و آنها حذف شده اند)
-این عمل برای شش ویژگی فاصله پرش فکری انجام شده است. این 6 حالت شامل میانگین  و انحراف معیار و مجموع فواصل در هر دو حالت فاصله اقلیدسی و فاصله کسینوسی می باشد.
-از میزان هم‌بستگی هر یک از ویژگی‌های به دست آمده با امتیازات  پرسش‌نامه افسردگی بک می‌توان به ویژگی‌های مهم دست یافت و در ادامه به آن‌ها پرداخت. حتی امتیازهای منفی ولی بزرگ نیز می‌توانند مهم باشند. این همبستگی زمانی که مقدارش از  دو تقسیم بر رادیکال n بیشتر باشد قابل قبول است. ویژگی‌های زیر روی 119 نفر که هر یک دارای صحبت در مورد توصیف هشت تصویر هستند می‌باشند. پس در نتیجه ویژگی‌های زیر برای 119*8=952 گفتار محاسبه شده‌اند. این به آن معنی است که همبستگی‌های بالای دو تقسیم بر رادیکال 952 که معادل است با مقدار 0.06 ، ارتباط معناداری با امتیازات پرسش‌نامه افسردگی بک دارند. مشاهده می‌شود که مقادیر میزان انحراف معیار و مجموع فاصله اقلیدسی و کسینوسی مقادیر قابل قبولی هستند. در بخش correlation میزان همبستگی هر یک از این ویژگی ها با میزان امتیازات پرسشنامه افسردگی بک محاسبه شده است که به شرح زیر است: 
+With the available vectorized data, which also includes linguistic features in the dataset, it is possible to analyze and evaluate the similarity matrix based on the desired features, even distinguishing between analytical images. This process will be performed subsequently.
+The level of cognitive leaps experienced by the participants is also calculated using the Euclidean distance and the cosine angle between the embedded semantic vectors of each sentence in the texts. The average, standard deviation, and sum of distances are used as features. With n sentences in a text, we will have n-1 metrics in that text. This means that for texts with only one sentence, this feature cannot be calculated and they are excluded, leading to a value of nall.
+In the "Sort by Euclidean_mean" feature and then show the similarity matrix section, the data is sorted based on the Euclidean mean, and then the cosine similarity between the calculated vectors is measured. The obtained similarity matrix is then visualized. (The reason for reducing the data to 686 out of 686 is that in datasets containing only one sentence, the cognitive leap features cannot be calculated, so they are removed.)
+This process is performed for six cognitive leap features, including mean, standard deviation, and sum of distances in both Euclidean and cosine distances.
+By examining the correlation between each of these features and the depression questionnaire scores, we can identify important features and further study them. Even negative but significant scores can be important. This correlation is acceptable when its value is greater than dividing by the square root of n. The following features are calculated for 119 individuals, each describing eight images, resulting in calculations for a total of 952 utterances. This means that correlations above dividing by the square root of 952, which corresponds to a value of 0.06, have a meaningful relationship with the depression questionnaire scores. It can be observed that the values of standard deviation and sum of Euclidean and cosine distances are acceptable.
 
 
 
+7. scatter plot
+
+In this section, to become more familiar with the data, the similarity matrix is plotted when it is reduced to two dimensions.
+
+8. unsupervised
+
+This section is used when you want to analyze and draw conclusions only from audio data without using questionnaire data. However, since satisfactory results were not obtained from this section, it was not used in the final outcome.
+In this section, after transforming the grouped data of each person (each row corresponds to all the speeches of one person and is not separated for different images) into vectors using the TF-IDF vectorization method, the data is clustered using k-means and hierarchical methods.
 
 
-
-
-8. scatter plot
-   
-در این بخش برای بیشتر آشنا شدن با دادگان همان ماتریس شباهت زمانی که به دو بعد کاهش بعد داده میشود رسم شده است.
-
-10. unsupervised
-
-این بخش زمانی استفاده میشود که شما بخواهید بدون استفاده از دادگان پرسشنامه فقط روی دادگان صوتی تحلیل و نتیجه گیری انجام دهید. به دلیل اینکه نتیجه خوبی در نهایت از این بخش گرفته نشد در نتیجه ی نهایی از آن استفاده نشده است. 
-در این بخش پس از تبدیل داده های گروه بندی شده هر شخص(هر سطر مربوط به همه ی صحبت های یک شخص است و به تفکیک تصاویر جدا نشده اند) به بردار با استفاده از روش TF-IDF vectorization با روش kmeans و Hierarchical دادگان کلاستر میشوند.
-
-
-11. feature extraction
+9. feature extraction
 
     
-پردازش زبان طبیعی یا NLP استخراج اطلاعات معنی دار از داده‌های زبان طبیعی و دستکاری ‌‌آن‌ها با استفاده از رایانه است. مدل‌های پردازش زبان طبیعی معمولا مبتنی بر زبان انگلیسی هستند. برای زبان‌های دیگر از مدل‌های چندزبانه با منابع محدود استفاده می‌شود. ‌پارس‌برت یک برت تک زبانه را برای زبان فارسی پیشنهاد می‌دهد. ‌پارس‌برت روی یک دیتای عمومی‌حجیم (Persian Wikidumps, MirasText) و داده‌های وبسایت‌های زیادی آموزش دیده شده. بخشی از متودولوژی ‌پارس‌برت این است که پیش‌پردازشی گسترده برای آوردن مجموعه داده‌ها به یک قالب مناسب انجام داده است. مدل ‌پارس‌برت به‌طور خاص بر روی واژگان خاص زبان با مقادیر انبوهی از داده‌های متن فارسی آموزش داده شده است. 
+Natural Language Processing (NLP) is the extraction of meaningful information from natural language data and manipulating them using computers. NLP models are usually based on the English language. For other languages, multilingual models with limited resources are used. ParsBERT suggests a monolingual BERT model for the Persian language. ParsBERT has been trained on large public datasets (Persian Wikidumps, MirasText) and numerous website data. Part of the ParsBERT methodology includes extensive preprocessing to bring the dataset into an appropriate format. The ParsBERT model has been specifically trained on specific language vocabulary with a large amount of Persian text data.
+
+
 sentiment analysis
 
-یکی از ویژگی‌های مورد استفاده، احساسات است. احساسات متن به دو روش محاسبه شده و از آن‌ها به عنوان ویژگی در ‌پیش‌بینی استفاده شده است. در روش اول یک تابع تعریف شده که با گرفتن یک رشته از کلمات به زبان فارسی با استفاده از کتابخانه hazm عملیات توکنیزه کردن و نشاندار کردن یک رشته کاراکتر به کوچکترین واحدی که در یک زبان قابل اهمیت است انجام می‌شود. بعد با استفاده از مدل طبقه بندی متن میزان امتیاز احساسات هر متن ‌پیش‌بینی می‌شود. در روش دوم تابع خط لوله از کتابخانه‌ترنسفورماتورها یک مدل یادگیری ماشین از پیش آموزش دیده شده را بارگزاری کرده و از آن برای تسک پردازش طبیعی تحلیل احساسات استفاده کرده است. احساسات عددی بین صفرو یک است که احتمال مثبت بودن یک متن را نشان میدهد. جایی که امتیاز احساسات نزدیک به یک باشد نشان دهنده احساسات مثبت‌تر و نزدیک به صفر نشان دهنده احساسات منفی‌تر است. اگر این میزان نزدیک به نیم باشد به این معنی است که مدل نمی‌تواند با اطمینان در مورد احساسات متن نظر دهد.
+One of the features used is sentiment analysis. Text sentiment is calculated using two methods and used as a feature in prediction. In the first method, a defined function is used to tokenize and annotate a string of Persian words into the smallest meaningful unit using the hazm library. Then, using a text classification model, the sentiment score of each text is predicted. In the second method, a pre-trained machine learning model loaded from the Transformers library is used for natural language processing and sentiment analysis. Sentiments are represented numerically between 0 and 1, indicating the likelihood of a text being positive. When the sentiment score is close to 1, it indicates more positive sentiments, while being close to 0 indicates more negative sentiments. If the score is close to 0.5, it means that the model cannot confidently determine the sentiments of the text.
 
 Speeh Graph Analysis
 
-با استفاده از گراف گفتار که در آن هر کلمه به عنوان یک گره و ارتباط بین کلمات متوالی به عنوان یک یال نمایش داده می‌شوند یک سری ویژگی از متون استخراج شده است. ویژگی­های استخراج ­شده به شرح زیر هستند:
-ویژگیهای زبانی شامل ویژگی‌های عمومی[1] مانند تعداد کل کلمات[2]، تعداد گره‌های گراف[3] و تعداد ارتباطات بین کلمات[4] می‌باشند. ویژگی‌های اجزاء متصل[5] مانند تعداد گره‌های بزرگترین جزئیات متصل یعنی بزرگترین زیرگراف که در آن همه کلمات با هم مرتبطند در گراف بدون جهت[6] و تعداد گره‌های بزرگترین جزئیات قوی متصل در گراف جهت دار[7] است.
-ویژگی‌های بازگشتی[8] مانند مجموع تمام یالهای ساده یعنی لینک‌های تکرار شده[9] و لینک‌های موازی[10] که یک جفت گره را به هم مرتبط می‌کنند و ماتریس مجاورت بین کلمات[11] و نصف مجذور ماتریس مجاورت[12] هستند.
-همچنین ویژگی‌های جهانی[13] مانند ، چگالی گراف[14]، قطر یا طول بزرگترین کوتاهترین مسیر بین در دو نود در گراف[15]، ضریب خوشه بندی[16]، متوسط کوتاه‌ترین مسیر بین هر دو نود در شبکه[17]، میانگین کل درجات[18] و .. محاسبه شده است.
-
-
-[1] general attributes
-[2] Word count
-[3] nodes
-[4] edges
-[5] connected components
-[6] Largest connected components
-[7] Largest strongly connected components
-[8] recurrence attributes
-[9] Related edges
-[10] Parallel edges
-[11] L1
-[12] L2
-[13] global attributes
-[14] density
-[15] diameter
-[16] clustering coefficient
-[17] average shortest path
-[18] average total degree
-
+Using a speech graph, where each word is represented as a node and the connections between consecutive words are represented as edges, a series of features have been extracted from the texts. The extracted features are as follows:
+Language features include general attributes such as the total word count , the number of graph nodes , and the number of edges. connected components include largest connected component, Largest strongly connected components.recurrence attributes include  Related edges, parallel edges, and L1 and L2. Additionally, global attributes such as graph density, diameter, clustering coefficient , average shortest path, average total degree , etc., have been calculated.
 
 correlation
 
-در این بخش میزان همبستگی هر یک از ویژگی های استخراج شده با BDI-score محاسبه شده است.از میزان هم‌بستگی هر یک از ویژگی‌های به دست آمده با امتیازات  پرسش‌نامه افسردگی بک می‌توان به ویژگی‌های مهم دست یافت و در ادامه به آن‌ها پرداخت. حتی امتیازهای منفی ولی بزرگ نیز می‌توانند مهم باشند. این همبستگی زمانی که مقدارش از  دو تقسیم بر رادیکال n بیشتر باشد قابل قبول است. ویژگی‌های زیر روی 119 نفر که هر یک دارای صحبت در مورد توصیف هشت تصویر هستند می‌باشند. پس در نتیجه ویژگی‌های زیر برای 119*8=952 گفتار محاسبه شده‌اند. این به آن معنی است که همبستگی‌های بالای دو تقسیم بر رادیکال 952 که معادل است با مقدار 0.06 ، ارتباط معناداری با امتیازات پرسش‌نامه افسردگی بک دارند. شکل زیر میزان همبستگی هر یک از سایر ویژگی‌ها با امتیازات پرسش‌نامه افسردگی بک را نشان میدهد. مشاهده می‌شود که ویژگی‌های PE، L1، L2، LCC، LSC، چگالی و قطر گراف گفتار و ASP ویژگی‌های قابل قبولی هستند که مقدار همبستگی آن‌ها با امتیازات پرسش‌نامه افسردگی بک از یک حدی بیشتر است.
+
+In this section, the correlation between each of the extracted features and the BDI-score has been calculated. By examining the correlation between these features and the depression questionnaire scores, important features can be identified and further explored. Even negative but large scores can be significant. The acceptable correlation is when its value exceeds the division by the square root of n. The following features apply to 119 individuals, each of whom has spoken about describing eight images. Therefore, a total of 952 speeches have been analyzed for these features. This means that correlations above the division by the square root of 952, which corresponds to a value of 0.06, have a significant relationship with the BDI-score. The figure below illustrates the correlation between each of these features and the BDI-score. It can be observed that the PE, L1, L2, LCC, LSC, graph density, graph diameter, and ASP features show acceptable correlation values higher than a certain threshold.
 
 
-
-
-
-ولی ما به این بسنده نکردیم و پس از آن به تفکیک هر تصویر میزان همبستگی ویژگی‌های پرش ذهنی با امتیازات پرسش‌نامه افسردگی بک محاسبه شده است. در این صورت می‌توان همسبتگی‌های جالبی بین ویژگی‌های درون هر تصویر به صورت خاص مشاهده کرد. در بخش‌های بعد این عمل با سه روش توکن‌محور، جمله‌محور و میانگین تعبیه جملات محور به تفکیک هر تصویر انجام شده و مقدار همبستگی و میزان قابل قبول بودن آن نیز به دست آورده ایم و در جداولی در ادامه نوشته شده است. 
+However, we did not stop there, and after that, the correlation between the features of each image and the BDI-score was separately calculated. In this case, interesting correlations between the features within each image can be observed. In the subsequent sections, this analysis has been performed on each image separately using three methods: token-centric, sentence-centric, and average embedding of sentence-centric approaches. The correlation values and their acceptability have also been obtained and presented in tables.
 
 10. SVM - RF- DT - balance - LOO
 
 
-در این بخش سه روش svm و random forest و decision tree پیاده سازی شده و 
-دادگان بالانس شده 
-از روش leave one out استفاه شده.
+In this section, three methods, SVM, Random Forest, and Decision Tree, have been implemented, and balanced data using the leave-one-out method has been used. 
 
 TFIDF with 2 class
 
-ابتدا در این بخش دادگان به دو کلاس نرمال و افسرده تقسیم شده که بین دو کلاس بالانس برقرار باشد و تعداد دادگان در یک کلاس خیلی کم یا خیلی زیاد نباشد. البته با این کار انگار یک سری اطلاعات دور ریخته میشوند زیرا میزان افسردگی دیگر در نظر گرفته نشده است. بعد روی بردارهایی که با TFIDF به دست آمده اند کاهش بعد انجام شده و بعد از پیاده سازی LeaveOneOut  روی مدل svm میزان معیارهای ارزیابی و Confusion Matrix و ROC Curve و Precision-Recall Curve نمایش داده شده اند.
+Firstly, the data has been divided into two classes: normal and depressed, ensuring balance between the two classes so that one class does not have significantly more or fewer data instances than the other. However, this approach may discard some information as it does not take into account the level of depression. Then, dimensionality reduction has been performed on the TF-IDF vectors, and after implementing leave-one-out on the SVM model, various evaluation metrics, confusion matrix, ROC curve, and Precision-Recall curve have been displayed.
 
 Scatter Plot between features:
 
-در این بخش اسکتر پلات بین ویژگی های مختلف به دست آمده تا ملموس تر بشد و بتوان تحلیل کرد تا ویژگی های نامناسب را حذف کرد.
+In this section, scatter plots have been generated between different features to provide a more concrete visualization and facilitate analysis to identify and remove irrelevant features.
 
 TFIDF with 63 class _ balance
 
-بالانس کردن در این بخش با تقسیم دادگان به دو کلاس انجام نمیشود بلکه با حذف دادگان از کلاسهایی که تعداد زیادی داده دارند انجام میشود تا در هر کلاس میزان یکسانی داده قرار داشته باشد. البته مشخص است که این روش ممکن است ممناسب نباشد و این مراحل فقط برای آزمایش راه حل های مختلف پیاده سازی شده بودند. که نتایج خوبی نداشتند.
+In this section, data balancing is not achieved by dividing the data into two classes. Instead, it is achieved by removing data instances from classes that have a large number of instances, ensuring equal data distribution in each class. However, it should be noted that this method may not be suitable, and these steps were only implemented for experimentation with different solutions, yielding unsatisfactory results.
+
 visualized similarity matrix
 
-در این بخش رسم ماتریس شباهت انجام شده است. درون صحبت های هر تصویر نیز به ترتیب BDI-score مرتب شده است. با استفاده از percentile میتوان ویژوالیزیشن بهتری از کاتریس شباهت داشت. 
-به منظور تحلیل بیشتر از ماتریس شباهت استفاده شده تا تحلیل انجام شود. تحلیل و تفسیر دادگان در فضای ماتریس عدم تشابه بازنمایی[ representational dissimilarity matrix] انجام شده است تا شباهت تصاویر و ارتباط با امتیازات پرسش‌نامه افسردگی بک ملموس‌تر باشد. ماتریس شباهت از روی بردارهای به دست آمده برای هر متن بین گفتارها محاسبه شده است و بر اساس امتیازات پرسش‌نامه افسردگی بک مرتب سازی شده است تا بتوان ارتباطات معنادار را مشاهده کرد. این ماتریس بر اساس تصاویر به صورت مجزا نیز رسم شده است. رسم آن نیز بر حسب درصد[ percentile] می‌باشد تا بتوان درک بهتری از آن داشت. تبدیل یک ماتریس شباهت به یک ماتریس صدک می‌تواند برای درک بهتر و مقایسه شباهت بین مجموعه‌های مختلف داده مفید باشد. درصدها راهی برای رتبه‌بندی مقادیر نسبت به یکدیگر در یک توزیع فراهم می‌کنند که می‌تواند به شناسایی نقاط پرت یا الگوهایی در داده‌ها کمک کند که ممکن است بلافاصله با مشاهده نمرات شباهت خام آشکار نشوند.
-با داشتن ماتریس تشابهی که نشان دهنده شباهت بین بردار‌های مختلف است، تبدیل آن به صدک می‌تواند کمک کند تا تشخیص دهید بردار‌های مربوط به کدام تصاویر به طور خاص به یکدیگر مرتبط هستند (یعنی مقادیر صدک بالایی دارند) و کدامیک به هم نامرتبط‌تر هستند. (یعنی مقادیر صدک کمتری دارند). این می‌تواند برای اهداف طبقه بندی یا برای شناسایی روابط تکاملی بین تصویر‌های مختلف مفید باشد.
-در ماتریس مجاورت هر سطر و هر ستون نشان دهنده یک گفتار هستند. شباهت بردارهای معنایی سطر‌های ماتریس مجاورت با ستونهای ماتریس مجاورت، با رنگ درون هر سلول مشخص شده‌اند. قطر اصلی ماتریس مجاورت تماما یک می‌باشد به این معنی که هر گفتار با خودش بیشترین شباهت را دارد. ماتریس مجاورت یک ماتریس مربعی است که ابعاد آن به تعداد گفتارها در تعداد گفتار‌ها می‌باشد. میزان همبستگی بین ویژگی‌ها و امتیازات پرسش‌نامه افسردگی بک به صورت عادی و مرتب نشده در شکل های رسم شده (مانند شکل زیر) نمایش داده شده است.
+In this section, the similarity matrix has been visualized. The conversations within each image have also been sorted according to BDI-score. By using percentiles, a better visualization of the similarity matrix can be obtained. The analysis and interpretation of the data have been performed using a representational dissimilarity matrix to provide a more tangible representation of the similarity between images and their relationship with BDI-scores. The similarity matrix has been calculated based on the vectors obtained for each speech, and it has been sorted based on the BDI-scores, allowing for the observation of meaningful connections. The similarity matrix has also been plotted separately based on images. The plotting is done in terms of percentiles to enhance understanding. Transforming a similarity matrix into a percentile matrix can be useful for better understanding and comparing similarities between different sets of data. Percentiles provide a way to rank values relative to each other in a distribution, which can help identify outliers or patterns that may not be immediately apparent from raw similarity scores.
 
-هر یک از این بخش ها نیز میتواند از نزدیک تر نمایش داده شود که کد آن در بخش sub plots نوشته شده است. 
+By having a similarity matrix that indicates the similarity between different vectors, converting it into percentiles can help identify which vectors are specifically related to each other (i.e., high percentile values) and which ones are less related (i.e., lower percentile values). This can be useful for classification purposes or for identifying evolving relationships between different images.
+
+In the adjacency matrix, each row and column represent a speech. The similarity of semantic vectors between rows of the adjacency matrix and columns of the adjacency matrix is indicated by the color within each cell. The main diagonal of the adjacency matrix is all ones, meaning that each speech has the highest similarity with itself. The adjacency matrix is a square matrix with dimensions equal to the number of speeches. The correlation between the features and the BDI-scores is displayed in the plots in a normal and unsorted manner (like the figure below).
+
+Each of these sections can also be zoomed in for a closer view, and the code for that is written in the subplots section.
 
 
 11. jump of idees & correlation:
 
 
-هر شخص در مورد هشت تصویر صحبت کرده است. پس در ماتریس شباهت اطلاعات هر آزمودنی در واقع یک ماتریس هشت در هشت میباشد. عناصر قطر اصلی که شباهت هر گفتار با خودش را نشان میدهد همه یک هستند و عناصر بالا و پایین قطر اصلی نیز یکسان هستند. به همین دلیل تنها از 28 مقداری که در بالای قطر اصلی است استفاده شده است.ماتریس شباهت برای هر شخص به صورت مجزا که فقط از عناصر بالای قطر اصلی استفاده می‌شود چون عناصر زیر قطر اصلی تکراری هستند و  عناصر روی قطر اصلی تماما یک هستند.
-وقتی که با اطلاعات ماتریس‌های  8 در 8 افراد  با ویژگی‌های مربوط به فاصله اقلیدسی و کسینوسی هر یک به صورت مجزا میزان امتیازات پرسش‌نامه افسردگی بک ‌پیش‌بینی می‌شود سه حالت داریم:
-1.      حالت توکن‌محورtocken based embedding
-2.      حالت جمله‌محور sentence based embedding
-3.      حالت میانگین تعبیه جملات محور mean word based embedding
-در هر یک از این سه حالت کارهای یکسانی انجام شده فقط نحوه تبدیل به بردار متفاوت است. در هر بخش بعد از به دست آوردن فواصل سینوسی و کسینوسی بردارهای معنایی ویژگی های مجموع و انحراف معیار و میانگین به دست آمده است، سپس میزان همبستگی هر ویژگی با BDI-score محاسبه شده است. مقدار significant در آن تعداد داده نیز محاسبه شده است و نمایش داده شده است.
+Each person has talked about eight images. Therefore, in the similarity matrix, the information of each participant is actually an eight by eight matrix. The main diagonal elements, which represent the similarity of each speech with itself, are all the same, and the upper and lower elements on the main diagonal are also identical. For this reason, only the 28 values above the main diagonal are used. The similarity matrix for each individual, which only uses the elements above the main diagonal, is used because the elements below the main diagonal are redundant and the elements on the main diagonal are all the same. When using the information from the 8 by 8 matrices of individuals with respect to Euclidean and cosine distances, the prediction of the depression questionnaire scores can be categorized into three modes:
+1.      Token-based embedding mode
+2.      Sentence-based embedding mode
+3.      Mean word-based embedding mode
+In each of these three modes, similar tasks are performed, with only the vector transformation method being different. In each section, after obtaining the Euclidean and cosine distances, semantic feature vectors are calculated based on the mean, standard deviation, and sum of the features. Then, the correlation between each feature and the BDI-score is calculated. The significance value is also computed, representing a certain number of data points, which is displayed.
 
 
 12. percentile similarity matrix :
 
 
-در این بخش برای سه حالت زیر رسم ماتریس مجاورت بر حسب درصد انجام شده است:
-1.      حالت توکن‌محورtocken based embedding
-2.      حالت جمله‌محور sentence based embedding
-3.      حالت میانگین تعبیه جملات محور mean word based embedding
-به منظور تحلیل بیشتر از ماتریس شباهت استفاده شده تا تحلیل انجام شود. تحلیل و تفسیر دادگان در فضای ماتریس عدم تشابه بازنمایی[ representational dissimilarity matrix] انجام شده است تا شباهت تصاویر و ارتباط با امتیازات پرسش‌نامه افسردگی بک ملموس‌تر باشد. ماتریس شباهت از روی بردارهای به دست آمده برای هر متن بین گفتارها محاسبه شده است و بر اساس امتیازات پرسش‌نامه افسردگی بک مرتب سازی شده است تا بتوان ارتباطات معنادار را مشاهده کرد. این ماتریس بر اساس تصاویر به صورت مجزا نیز رسم شده است. رسم آن نیز بر حسب درصد[ percentile] می‌باشد تا بتوان درک بهتری از آن داشت. تبدیل یک ماتریس شباهت به یک ماتریس صدک می‌تواند برای درک بهتر و مقایسه شباهت بین مجموعه‌های مختلف داده مفید باشد. درصدها راهی برای رتبه‌بندی مقادیر نسبت به یکدیگر در یک توزیع فراهم می‌کنند که می‌تواند به شناسایی نقاط پرت یا الگوهایی در داده‌ها کمک کند که ممکن است بلافاصله با مشاهده نمرات شباهت خام آشکار نشوند.
-با داشتن ماتریس تشابهی که نشان دهنده شباهت بین بردار‌های مختلف است، تبدیل آن به صدک می‌تواند کمک کند تا تشخیص دهید بردار‌های مربوط به کدام تصاویر به طور خاص به یکدیگر مرتبط هستند (یعنی مقادیر صدک بالایی دارند) و کدامیک به هم نامرتبط‌تر هستند. (یعنی مقادیر صدک کمتری دارند). این می‌تواند برای اهداف طبقه بندی یا برای شناسایی روابط تکاملی بین تصویر‌های مختلف مفید باشد.
-در ماتریس مجاورت هر سطر و هر ستون نشان دهنده یک گفتار هستند. شباهت بردارهای معنایی سطر‌های ماتریس مجاورت با ستونهای ماتریس مجاورت، با رنگ درون هر سلول مشخص شده‌اند. قطر اصلی ماتریس مجاورت تماما یک می‌باشد به این معنی که هر گفتار با خودش بیشترین شباهت را دارد. ماتریس مجاورت یک ماتریس مربعی است که ابعاد آن به تعداد گفتارها در تعداد گفتار‌ها می‌باشد.
+In this section, the adjacency matrix is plotted in terms of percentiles for the following three modes:
+1.      Token-based embedding mode
+2.      Sentence-based embedding mode
+3.      Mean word-based embedding mode
 
+To further analyze the similarity matrix, it is used to interpret dissimilarity in the representational dissimilarity matrix space, making the relationship between images and depression questionnaire scores more tangible. The similarity matrix is calculated based on the obtained vectors for each text, and it is sorted according to the depression questionnaire scores in order to observe meaningful connections. This matrix is also plotted separately based on percentiles, providing a better understanding. Transforming a similarity matrix into a percentile matrix can be useful for better comprehension and comparison of similarities between different datasets. Percentiles provide a way to rank values relative to each other in a distribution, which can help identify outliers or patterns that may not be immediately apparent from raw similarity scores.
+
+By having a similarity matrix that indicates the similarity between different vectors, transforming it into percentiles can help determine which vector refers specifically to which images (i.e., having higher percentile values) and which one is less related to others (i.e., having lower percentile values). This can be useful for classification purposes or identifying evolving relationships between different images.
+
+In the adjacency matrix, each row and column represent a speech. The color within each cell indicates the semantic similarity between the semantic feature vectors of the adjacency matrix rows and columns. The main diagonal of the adjacency matrix is entirely filled with ones, meaning that each speech has the highest similarity with itself. The adjacency matrix is a square matrix with dimensions equal to the number of speeches.
 
 13. prediction SVM:
 
 
-لازم به ذکر است که این بخش برای تحلیل و آزمایش بیشتر انجام شده و نتایج اصلی در بخش بعد به دست آمده اند.
-هر شخص در مورد هشت تصویر صحبت کرده است. پس در ماتریس شباهت اطلاعات هر آزمودنی در واقع یک ماتریس هشت در هشت میباشد و از همین به عنوان ویژگی برای مدل استفاده شده است. عناصر قطر اصلی که شباهت هر گفتار با خودش را نشان میدهد همه یک هستند و عناصر بالا و پایین قطر اصلی نیز یکسان هستند. به همین دلیل تنها از 28 مقداری که در بالای قطر اصلی است استفاده شده است.ماتریس شباهت برای هر شخص به صورت مجزا که فقط از عناصر بالای قطر اصلی استفاده می‌شود چون عناصر زیر قطر اصلی تکراری هستند و  عناصر روی قطر اصلی تماما یک هستند.
-وقتی که با اطلاعات ماتریس‌های  8 در 8 افراد  با ویژگی‌های مربوط به فاصله اقلیدسی و کسینوسی هر یک به صورت مجزا میزان امتیازات پرسش‌نامه افسردگی بک ‌پیش‌بینی می‌شود سه حالت داریم:
-1.      حالت توکن‌محورtocken based embedding
-2.      حالت جمله‌محور sentence based embedding
-3.      حالت میانگین تعبیه جملات محور mean word based embedding
-در هر یک از این سه حالت کارهای یکسانی انجام شده فقط نحوه تبدیل به بردار متفاوت است
+It should be noted that this section was conducted for further analysis and experimentation, and the main results were obtained in the following section.
 
-از ویژگی های فاصله کسینوسی و اقلیدسی به صورت مجزا برای پیش بینی استفاده شده است.(euclidean و cosine). هر یک از بخش های این قسمت بر اساس نامی که دارند مشخص است که چه پیاده سازی ای در آنها انجام شده است.
+Each person has talked about eight images. Therefore, in the similarity matrix, the information of each participant is actually an eight by eight matrix, which is used as a feature for the model. The main diagonal elements, which represent the similarity of each speech with itself, are all the same, and the upper and lower elements on the main diagonal are also identical. For this reason, only the 28 values above the main diagonal are used. The similarity matrix for each individual, which only uses the elements above the main diagonal, is used because the elements below the main diagonal are redundant and the elements on the main diagonal are all the same.
+When using the information from the 8 by 8 matrices of individuals with respect to Euclidean and cosine distances, the prediction of the depression questionnaire scores can be categorized into three modes:
+1.      Token-based embedding mode
+2.      Sentence-based embedding mode
+3.      Mean word-based embedding mode
+4.  
+In each of these three modes, similar tasks are performed, with only the vector transformation method being different.
+
+The separate features of Euclidean and cosine distances have been used for prediction. Each section indicates the specific implementation performed in that particular mode.
 
 
 14. prediction : Linear regression
 
 
-در این بخش از مدل رگرسیون خطی، برای ‌پیش‌بینی استفاده شده است و عملکرد ‌پیش‌بینی شدت افسردگی گزارش شده بر حسب ضریب تعیین[R-squared] و ریشه میانگین مربعات خطا[Root Mean Squared Error] ارزیابی شده است.
-رگرسیون خطی یک روش آماری است که برای مدل‌سازی رابطه بین یک متغیر وابسته و یک یا چند متغیر مستقل استفاده می‌شود. هدف رگرسیون خطی یافتن بهترین خطی است که این رابطه را توصیف می‌کند و به ما امکان می‌دهد تا بر اساس مقادیر متغیرهای مستقل، در مورد متغیر وابسته پیش‌بینی کنیم. ایده اصلی پشت رگرسیون خطی این است که نقاط داده را روی یک نمودار پراکنده رسم کنیم و سپس یک خط مستقیم را در میان آن‌ها قرار دهیم که فاصله بین خط و نقاط داده را به حداقل برساند. سپس می‌توان از این خط برای پیش‌بینی مقادیر آینده متغیر وابسته بر اساس مقادیر جدید متغیرهای مستقل استفاده کرد. مدل‌های رگرسیون خطی در طیف وسیعی از کاربردها از جمله برای شناسایی روندها و روابط بین متغیرها استفاده می‌شوند که می‌تواند به تصمیم‌گیری در زمینه‌های مختلف کمک کند.
-همانطور که در بخش های قبل گفته شده هر شخص در مورد هشت تصویر صحبت کرده است. پس در ماتریس شباهت اطلاعات هر آزمودنی در واقع یک ماتریس هشت در هشت میباشد و از همین به عنوان ویژگی برای مدل استفاده شده است. عناصر قطر اصلی که شباهت هر گفتار با خودش را نشان میدهد همه یک هستند و عناصر بالا و پایین قطر اصلی نیز یکسان هستند. به همین دلیل تنها از 28 مقداری که در بالای قطر اصلی است استفاده شده است.ماتریس شباهت برای هر شخص به صورت مجزا که فقط از عناصر بالای قطر اصلی استفاده می‌شود چون عناصر زیر قطر اصلی تکراری هستند و  عناصر روی قطر اصلی تماما یک هستند.
-وقتی که با اطلاعات ماتریس‌های  8 در 8 افراد  با ویژگی‌های مربوط به فاصله اقلیدسی و کسینوسی هر یک به صورت مجزا میزان امتیازات پرسش‌نامه افسردگی بک ‌پیش‌بینی می‌شود سه حالت داریم:
-1.      حالت توکن‌محورtocken based embedding از حالت tf-idf برای embedding استفاده شده است.
-2.      حالت جمله‌محور sentence based embedding از حالت labse برای embedding استفاده شده است.
-3.      حالت میانگین تعبیه جملات محور mean word based embedding از حالت parsbert برای embedding استفاده شده است.
-برای هر یک از این سه حالت پیش بینی با روش Linear regression به تفکیک دو ویژگی (euclidean و cosine) انجام شده است. 
+ In this section, the linear regression model is used for prediction. The performance of the prediction of depression severity is evaluated based on the R-squared and the root mean squared error (RMSE).
+Linear regression is a statistical method used for modeling the relationship between a dependent variable and one or more independent variables. The goal of linear regression is to find the best line that describes this relationship, allowing us to predict the dependent variable based on the values of the independent variables. The main idea behind linear regression is to plot the data points on a scatter plot and then place a straight line among them that minimizes the distance between the line and the data points. This line can then be used to predict future values of the dependent variable based on new values of the independent variables. Linear regression models are used in a wide range of applications, including identifying trends and relationships between variables, which can assist in decision-making in various domains.
+
+
+As mentioned in the previous sections, each person has provided information about eight images. Therefore, the similarity matrix for each participant is essentially an 8x8 matrix, and it has been used as a feature for the model. The main diagonal elements, which represent the similarity of each utterance with itself, are all ones, and the upper and lower elements of the main diagonal are also the same. Hence, only the 28 values above the main diagonal have been used. The similarity matrix for each person is considered separately, utilizing only the values above the main diagonal, as the elements below the main diagonal are redundant and the elements on the main diagonal are all ones.
+
+When predicting the scores of the depression questionnaire using the information from the 8x8 matrices of individuals, based on the Euclidean and cosine distances as relevant features, three scenarios are considered:
+1. Token-based embedding: The TF-IDF method is used for embedding.
+2. Sentence-based embedding: The LaBSE method is used for embedding.
+3. Mean word-based embedding: The ParsBERT method is used for embedding.
+
+For each of these three scenarios, the prediction is performed using linear regression separately for the two features (Euclidean and cosine distances).
 
 
 
