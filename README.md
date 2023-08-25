@@ -6,48 +6,45 @@ mina.zarifi@ut.ac.ir
 
 
 
-لازم به ذکر است تقریبا در انتهای هر بخش دیتای به دست آمده ذخیره شده و در بخش بعد استفاده میشود. به همین دلیل شما نیازی به به ترتیب اجرا کردن ستون ها ندارید بلکه میتوانید با در اختیار داشتن دادگان مناسب از هر بخشی که نیاز دارید استفاده کنید. 
+It should be noted that almost at the end of each section, the obtained data is saved and used in the next section. Therefore, you do not need to execute the cells in order. Instead, you can use any section you need with appropriate data.
 
-فایل کد پایتون در Zarifi_project.ipynb و توضیحات نیز در یک فایل docx ذخیره شده است. بقیه فایلها csv هستند که دادگان به دست آمده از هر قسمت هستند. برای اجرای هر قطعه کد میتوانید بخش مورد نظر را دانلود و استفاده کنید. 
+The Python code file is saved as Zarifi_project.ipynb, and the explanations are stored in a .docx file. The remaining files are in CSV format, which contains the data obtained from each section. To run each code snippet, you can download the relevant section and use it.
 
-چکیده:
-در این پژوهش دادگان به صورت آنلاین از افراد بزرگسال مختلفی جمع آوری شده­اند، که شامل دو وظیفه گفتاری مختلف که اولی سه سوال در مورد گذشته، حال و آینده آزمودنی و دومی توصیف هشت تصویر توسط آزمودنی است. همچنین چهار پرسش‌نامه به نام‌های پرسش‌نامه افسردگی بک، پرسش‌نامه اضطراب بک، پرسش‌نامه اضطراب حالت صفت بک و پرسش‌نامه پاناس نیز از آزمودنی‌ها جمع‌آوری شده است. هدف تحقیق روی بیماری افسردگی است. برای ارزیابی علائم افسردگی، از وظیفه گفتاری توصیف هشت تصویر توسط 119 آزمودنی تصادفی بالای هجده سال سن، از میزان امتیازات افراد در پرسش‌نامه افسردگی بک استفاده شد. این پژوهش با هدف تحلیل رابطه بین نمرات پرسش‌نامه افسردگی بک و ویژگی‌های مربوط به متن پیش برده شده است. با استفاده از تحلیل ماتریس شباهت بردارهای معنایی، نشان داده شد که بعضی از این ویژگی‌ها تأثیری در علائم افسردگی دارد. برای مثال بزرگسالان با علائم افسردگی بیشتر مقدار انحراف معیار فاصله اقلیدسی و کسینوسی بیشتر بین بردارهای معنایی در بین جملات هستند. علاوه بر این، در حالی که مشخص شد برخی ویژگی‌ها در توضیح علائم افسردگی و اضطراب موثرند، برای تعیین اهمیت آن‌ها در پیش‌بینی این وضعیت‌های روانی، از مدل‌ه یادگیری ماشین رگرسیون خطی استفاده شده است. ویژگی‌های بررسی شده گراف گفتار، احساسات متن، میزان پرش فکری، بردارهای معنایی می‌باشند. از بردارهای معنایی برای تحلیل ارتباط بین ویژگی‌ها و امتیازات پرسش‌نامه افسردگی نیز استفاده شده است. بردار‌های معنایی به سه روش بردارهای معنایی به دست آمده به روش توکن‌محور، جمله‌محور و میانگین تعبیه جملات محور به دست آمده‌اند و با هم مقایسه شده‌اند. تمامی‌مراحل(پیدا کردن میزان همبستگی بین ویژگی‌ها با امتیازات پرسش‌نامه افسردگی بک، مشاهده ماتریس شباهت به تفکیک هر تصویر، ‌پیش‌بینی امتیازات پرسش‌نامه افسردگی بک با استفاده از مدل رگرسیون خطی) روی هر سه مورد انجام شده است. از آن‌ها نیز برای تحلیل ماتریس شباهت استفاده شده است تا اگر ویژگی ای روند خاصی طبق امتیازات پرسش‌نامه افسردگی بک با ماتریس شباهت بین بردارهای معنایی داشته باشد از آن ویژگی به عنوان ورودی طبقه بند برای ‌پیش‌بینی امتیازات پرسش‌نامه افسردگی بک استفاده شود. 
-
+Abstract:
+    In this study, online data was collected from various adult subjects, which dataset included two different speech tasks. The first task involved answering three questions about the past, present, and future, while the second task involved describing eight images by the subjects. Additionally, four inventory named the Beck Depression Inventory, Beck Anxiety Inventory, Beck State-Trait Anxiety Inventory, and P.A.N.A.S. were also collected from the subjects.
+The aim of the research was to study depression as a disease. To evaluate the symptoms of depression, the speech task of describing eight pictures was used by 119 random subjects over eighteen years of age, and the scores of individuals in the Beck Depression Inventory. This research has been carried out with the aim of analyzing the relationship between the scores of the Beck Depression Inventory and the characteristics of the text. Using semantic vector similarity analysis, it was shown that some of these features have an effect on depression symptoms. For example adults with more depression symptoms had a greater standard deviation of Euclidean and cosine distances between semantic vectors in sentences. In addition, while it was found that some features are effective in describing depression symptoms, a linear regression machine learning model was used to determine their importance in predicting these psychological states. The examined features include speech graph, text sentiments, jump of ideas, and semantic embedding vectors. Embedding vectors were also used to analyze the relationship between features and Beck Depression Inventory scores. The embedding vectors were obtained using three methods: token-based, sentence-based, and sentence-averaging embedding. All stages (finding the correlation between features and Beck Depression Inventory scores, observing similarity matrix for each image, predicting Beck Depression Inventory scores using a linear regression model) were performed for all three cases. They were also used to analyze the similarity matrix so that if a feature has a specific trend according to the Beck Depression Inventory  scores and the similarity matrix between semantic embedding vectors, that feature can be used as input for regressing and predicting the Beck Depression Inventory scores. 
 
 1.Create only image CSV
 
 
-لازم به ذکر است در صورتی که شما فایل CSV دادگان را در اختیار دارید نیاز به اجرای این بخش ندارید. 
-دیتاست شامل داده های آزمون صوتی تشکیل شده از دو تسک گفتاری است. یکی از تسک های گفتاری مربوط به سه سوال در مورد گذشته و حال و آینده آزمودنی ها است و تسک صوتی دوم صحبت های آزمودنی در مورد هشت تصویر است. در این پروژه تنها از دادگان تسک صوتی دوم که مربوط به 8 تصویر است استفاده شده است به همین دلیل در ابتدای کد ها Create only image CSV انجام شده است. که در آن ابتدا دادگان با فرمت mp3 به wav تبدیل شده اند(که این کد فقط یک بار نیاز به اجرا شدن دارد).
-بعد از آن speech to text با استفاده از vosk انجام شده است(کد های سلولهای این بخش به ترتیب باید اجرا شوند).
+Please note that if you have the CSV data file, you don't need to run this section. The dataset consists of audio test data from two speech tasks. One speech task involves three questions about the past, present, and future of the participants, and the second speech task involves participants talking about eight images. In this project, only the data from the second speech task, which is related to 8 images, is used. That's why the "Create only image CSV" section is performed in the code. In this section, the data is first converted from mp3 format to wav (this code only needs to be executed once). After that, speech to text conversion is performed using Vosk (the code cells of this section should be executed in order).
 
 
 preproccess 
 
 
-در بخش preproccess دادگانی که ناقص بودند پیدا شده و به صورت دستی آنهایی که ناقص بودند یا حذف و یا مجددا توسط آزمودنی ها کامل شدند. ( دیگران نیازی به این بخش ندارند و این قسمت برای دیتای خاص پروژه اینجانب انجام شده است.)
+In the preprocess section, incomplete data was identified and manually completed by the participants by either deleting or filling in the missing parts (others do not need this section, and this part was done specifically for my project's data).
 
-Transcriptهایی که به صورت اتوماتیک از طریق vosk به دست آمده بودند در این بخش بررسی شدند و دیتا تمیز شد. هشت تصویر در تسک وجود داشت. مشاهده شد کسانی که شمرده شمرده صحبت کرده بودند transcript بسیار خوبی از آنها در دسترس بود. کسانی که بخاطر ضعیف بودن اینترنت یا اشتباهی رد کردن یک عکس در مورد هفت تصویر صحبت کرده بودند و تنها یک ویس از آنها وارد سرور نشده بود هم وارد دیتاست شدند و متن آن یک فایل به صورت دستی وارد دیتاست شد. بعضی از فایلها جابجا شده بودند(ترتیب فایل های صوتی که مربوط به عکسها به هم خورده بود) آن ها هم درست شدند. کسانی که اشتباها فایل صوتی مربوط به یک عکس را ضبط نکرده بودند و در عکس بعدی در مورد عکس قبلی صحبت کرده بودند هم به صورت دستی درست شدند.
-طول هر صدا نیز وارد دیتاست شد.
-تعداد افراد باقی مانده 123 نفر است. تنها دادگان مربوط به هشت تصویر در یک فایل ذخیره شده و از این پس روی آن تحلیل خواهد شد. دیتاست به تعداد 984 سطر دارد که هر 8 سطر مربوط به یک آزمودنی است.
-عکس پیوست شده تصویری از ستون های دیتاست در این مرحله را نشان میدهد.
+The transcripts obtained automatically through Vosk were examined in this section and the data was cleaned. There were eight images in the task. It was observed that those who spoke clearly had a very good transcript available. Those who mistakenly skipped speaking about one image due to a weak internet connection or other reasons and only one voice recording was not uploaded to the server were also included in the dataset, and their text was manually entered into the dataset. Some files were shuffled (the order of audio files related to images was mixed up), and they were corrected as well. Those who accidentally did not record the audio file for one image and spoke about the previous image in the next image were also manually corrected.
+
+The duration of each audio was also included in the dataset.
+The number of remaining individuals is 123. Only the data related to eight images is saved in one file and will be analyzed from now on. The dataset has a total of 984 rows, and every 8 rows correspond to one participant.
 
 
 
 2.COMPUTE BDI
 
 
-در بخش COMPUTE BDI میزان امتیازات پرسشنامه افسردگی بک محاسبه میشود. لازم به ذکر است که میزان امتیازات پرسشنامه های دیگر با فرمول های متفاوتی محاسبه می شوند که خودتان نیاز به پیاده سازی آن ها دارید.
-در این بخش امتیازات BDI افراد محاسبه شد و به دیتاست اضافه شد تا بعدا بعنوان لیبل از آنها استفاده شود. به افرادی که پرسشنامه BDI را انجام نداده بودند یا بخاطر سرعت اینترنت پاسخنامه آنها وارد سرور نشده بود پیامی فرستاده شد تا آن را تکمیل کنند.در ادامه تکلیف پرسشنامه هایی که بیش از یک بار پاسخ داده شده اند مشخص خواهد شد.
-پرسشنامه هایی که بیش از یک بار پاسخ داده شده بودند فقط دفعه اولشان نگه داشته شد و سایر پاسخنامه ها حذف شد. کسانی هم که خودشون به صورت دستی در پرسشنامه آیدی خود را تغییر داده بودند هم طبق زمان انجام پرسشنامه و آزمون صوتی شناسایی شدند و به دیتاست اضافه شدند.
-ستونهای دیتاست هم اصلاح شدند. از این نظر که هر سطر از دیتاست مربوط به یک فایل صوتی است. هر 8 سطر مربوط به یک نفر بود که در مورد 8 فایل صوتی صحبت کرده بوند. اینها طوری گروه بندی شدند که در دیتاست جدید هر گروه فقط یک آیدی داشته باشد و طول صحبت ها با هم جمع زده شود و متن تمامی فایلهای صوتی با هم ادغام شدند.
-دو بخش first block: read images csv and first BDI و second block:read only second BDI csv مربوط به این است که ابتدا محاسبه BDI برای یک سری دیتا انجام شده بود،بعدا که یک سری دیتا اضافه شد دوباره امتیازات BDI دادگان جدید محاسبه شده و به قبلی ها اضافه شده است. در صورتی که شما هم میخواهید به دیتاست خود دادگان جدید اضافه کنید این بخش به درد شما خواهد خورد.
+
+In the COMPUTE BDI section, the scores of the Beck Depression Inventory questionnaire are calculated. It should be noted that the scores of other Inventorys are calculated using different formulas, which you need to implement yourself. In this section, the BDI scores of individuals are computed and added to the dataset to be later used as labels. Individuals who have not completed the BDI or whose Inventory responses were not uploaded to the server due to internet speed issues were sent a message to complete it. The task then proceeds to determine the Inventorys that have been answered more than once.
+The Inventorys that have been answered more than once are retained only for their first occurrence, and the rest of the responses are deleted. Individuals who manually changed their Inventory IDs were identified based on the time of completing the Inventory and the audio test, and they were added to the dataset. The dataset columns were also modified so that each row corresponds to an audio file. Every 8 rows belong to one person who spoke about 8 audio files. They are grouped in such a way that each group has only one ID in the new dataset, and the lengths of the conversations are summed, and the text of all audio files is merged together. The "first block: read images CSV and first BDI" and "second block: read only second BDI CSV" sections are related to calculating the BDI for a set of data initially. Later, when a new set of data is added, the BDI scores for the new data are calculated and added to the previous ones. If you also want to add new data to your dataset, this section will be useful for you.
 
 
 3. categorization
 
 
-این بخش برای زمانی استفاده میشود که شما به جای استفاده از رگرشن بخواهید از کلاسیفیکیشن استفاده کنید. در این صورت 6 کلاس 'normal', 'mild_dep', 'borderline_dep', 'moderate_dep', 'severe_dep','extreme_dep' خواهید داشت.
+This section is used when you want to use classification instead of regression. In this case, you will have 6 classes:
+
 Total Score : Levels of Depression
 1-10 : These ups and downs are considered normal
 11-16 : Mild mood disturbance
@@ -59,9 +56,8 @@ over 40 : Extreme depression
 
 groupby id
 
-
-در بخش "groupby id" دادگان هر شخص که 8 سطر است در یک سطر ادغام شده اند(همه حرف هایشان در همه تصاویر در کنار هم قرار داده شده است) و طول کل صحبت هایی که هر نفر داشته نیز به عنوان یک ستون "total_length" به دادگان اضافه شده است. و در بخش "vectorised groupbied data" کل صحبت های هر شخص در مورد هر هشت تصویر تبدیل به یک بردار شده است با پارس برت. دیتاست تبدیل به بردار شده دارای ابعاد (118, 773) است.
-لازم به ذکر است که از این قسمت برای امتحان کردن روش های مختلف استفاده شده و به دلیل اینکه نتیجه خوب نبوده دیگر استفاده نشده است و راه حل دیگری استفاده شده است که در ادامه گفته خواهد شد. 
+In the "groupby id" section, the data for each person, which consists of 8 rows, is merged into one row (all their words are placed side by side in relation to all images). The total length of each person's conversations is also added as a column called "total_length" to the data. In the "vectorized groupbied data" section, all the conversations of each person about each of the eight images are vectorized using ParsBERT. The vectorized dataset has dimensions (118, 773).
+It should be noted that this part was used to test different methods, but it was not used anymore because the results were not satisfactory. Another solution was used, which will be mentioned later.
 
 4. vectorized - analysis
 
@@ -226,8 +222,6 @@ visualized similarity matrix
 
 
 
-Abstract:
-    In this study, online data was collected from various adult subjects, which dataset included two different speech tasks. The first task involved answering three questions about the past, present, and future, while the second task involved describing eight images by the subjects. Additionally, four inventory named the Beck Depression Inventory, Beck Anxiety Inventory, Beck State-Trait Anxiety Inventory, and P.A.N.A.S. were also collected from the subjects.
-The aim of the research was to study depression as a disease. To evaluate the symptoms of depression, the speech task of describing eight pictures was used by 119 random subjects over eighteen years of age, and the scores of individuals in the Beck Depression Inventory. This research has been carried out with the aim of analyzing the relationship between the scores of the Beck Depression Inventory and the characteristics of the text. Using semantic vector similarity analysis, it was shown that some of these features have an effect on depression symptoms. For example adults with more depression symptoms had a greater standard deviation of Euclidean and cosine distances between semantic vectors in sentences. In addition, while it was found that some features are effective in describing depression symptoms, a linear regression machine learning model was used to determine their importance in predicting these psychological states. The examined features include speech graph, text sentiments, jump of ideas, and semantic embedding vectors. Embedding vectors were also used to analyze the relationship between features and Beck Depression Inventory scores. The embedding vectors were obtained using three methods: token-based, sentence-based, and sentence-averaging embedding. All stages (finding the correlation between features and Beck Depression Inventory scores, observing similarity matrix for each image, predicting Beck Depression Inventory scores using a linear regression model) were performed for all three cases. They were also used to analyze the similarity matrix so that if a feature has a specific trend according to the Beck Depression Inventory  scores and the similarity matrix between semantic embedding vectors, that feature can be used as input for regressing and predicting the Beck Depression Inventory scores. 
+
 
 
