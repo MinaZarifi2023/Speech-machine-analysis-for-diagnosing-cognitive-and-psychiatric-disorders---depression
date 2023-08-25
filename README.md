@@ -1,14 +1,14 @@
-# Speech-machine-analysis-for-diagnosing-cognitive-and-psychiatric-disorders---depression
-A thesis submitted to the Graduate Studies Office In partial fulfillment of the requirements for The degree of Master's degree in Computer Engineering. University of Tehran  College of Engineering  Faculty of  Electrical and Computer Engineering
+# Speech-machine-analysis-for-diagnosing-cognitive-and-psychiatric-disorders___depression___
+*A thesis submitted to the Graduate Studies Office In partial fulfillment of the requirements for The degree of Master's degree in Computer Engineering. University of Tehran  College of Engineering  Faculty of  Electrical and Computer Engineering*
 
-By:Mina Zarifi - Supervisors:Dr. A Vahabie ,Dr. BN Araabi - June, 2023 -
-mina.zarifi@ut.ac.ir 
+**By:Mina Zarifi - Supervisors:Dr. A Vahabie ,Dr. BN Araabi - June, 2023 -
+mina.zarifi@ut.ac.ir** 
 
 
 
-It should be noted that almost at the end of each section, the obtained data is saved and used in the next section. Therefore, you do not need to execute the cells in order. Instead, you can use any section you need with appropriate data.
+> It should be noted that almost at the end of each section, the obtained data is saved and used in the next section. Therefore, you do not need to execute the cells in order. Instead, you can use any section you need with appropriate data.
 
-The Python code file is saved as Zarifi_project.ipynb, and the explanations are stored in a .docx file. The remaining files are in CSV format, which contains the data obtained from each section. To run each code snippet, you can download the relevant section and use it.
+> The Python code file is saved as Zarifi_project.ipynb, and the explanations are stored in a .docx file. The remaining files are in CSV format, which contains the data obtained from each section. To run each code snippet, you can download the relevant section and use it.
 
 # Abstract:
 
