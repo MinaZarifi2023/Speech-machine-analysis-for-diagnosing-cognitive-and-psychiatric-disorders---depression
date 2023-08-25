@@ -145,10 +145,11 @@ Each person has talked about eight images. Therefore, in the similarity matrix, 
 1. Token-based embedding mode
 2. Sentence-based embedding mode
 3. Mean word-based embedding mode
+   
 In each of these three modes, similar tasks are performed, with only the vector transformation method being different. In each section, after obtaining the Euclidean and cosine distances, semantic feature vectors are calculated based on the mean, standard deviation, and sum of the features. Then, the correlation between each feature and the BDI-score is calculated. The significance value is also computed, representing a certain number of data points, which is displayed.
 
 
-# 12. percentile similarity matrix :
+# 12. percentile similarity matrix
 
 
 In this section, the adjacency matrix is plotted in terms of percentiles for the following three modes:
@@ -192,14 +193,3 @@ When predicting the scores of the depression questionnaire using the information
 3. Mean word-based embedding: The ParsBERT method is used for embedding.
 
 For each of these three scenarios, the prediction is performed using linear regression separately for the two features (Euclidean and cosine distances).
-
-
-
-
-
-
-
-
-
-
-
